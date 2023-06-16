@@ -19,3 +19,7 @@
   border-radius: 5px;
   padding: 5px;
 }
+
+.button:hover {
+    background-color: aqua;
+}
