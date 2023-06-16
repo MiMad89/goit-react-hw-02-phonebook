@@ -31,12 +31,26 @@ export class App extends Component {
     }));
   };
 
+  showFilteredContacts = () => {
+    const { contacts, filter } = this.state;
+
+    return contacts.filter(e =>
+      e.name.toLowerCase().includes(filter.toLowerCase())
+    );
+  };
+
+  handleFilter = e => {
+    this.setState({
+      filter: e,
+    })
+  }
+
   deleteContact = e => {
     const { contacts } = this.state;
     this.setState({
       contacts: contacts.filter(contact => contact.id !== e),
     });
-  };yurbtscrrYY
+  };
 
   render() {
     return (
@@ -44,11 +58,11 @@ export class App extends Component {
         <h1>Phonebook</h1>
         <ContactsForm onSubmit={this.addContacts} />
         <h2>Contacts</h2>
+        <Filter onChange={this.handleFilter} />
         <ContactsList
-          contacts={this.state.contacts}
+          contacts={this.showFilteredContacts()}
           onClick={this.deleteContact}
         />
-        <Filter />
       </div>
     );
   }
