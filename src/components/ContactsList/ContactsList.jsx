@@ -14,7 +14,7 @@ export class ContactsList extends Component {
                     return (
                         <li key={contact.id} className={css.contactsListItem}>
                             <p>{contact.name}: {contact.number}</p>
-                            <button type="button" onClick={this.handleDelete} value={contact.id}>Delete</button>
+                            <button className={css.button} type="button" onClick={this.handleDelete} value={contact.id}>Delete</button>
                         </li>
                     )
                 })}

@@ -22,7 +22,7 @@ export class ContactsForm extends Component {
   render () {
     return (
       <form className={css.contactsForm} onSubmit={this.handleSubmit}>
-        <label htmlFor={NameInputId}>Name </label>
+        <label className={css.label} htmlFor={NameInputId}>Name </label>
         <input
           type="text"
           name="name"
@@ -33,7 +33,7 @@ export class ContactsForm extends Component {
           value={this.state.name}
           onChange={this.handleChange}
         />
-        <label htmlFor={NameInputId}>Number </label>
+        <label className={css.label} htmlFor={NameInputId}>Number </label>
         <input
           type="tel"
           name="number"
@@ -44,7 +44,7 @@ export class ContactsForm extends Component {
           value={this.state.number}
           onChange={this.handleChange}
         />
-        <button type="submit">Add contact</button>
+        <button className={css.button} type="submit">Add contact</button>
       </form>
     );
   }
