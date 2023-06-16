@@ -1,10 +1,16 @@
+import { Component } from 'react';
 import css from './Filter.module.css';
 
-export const Filter = () => {
+export class Filter extends Component {
+  handleFilter = e => {
+    const { value } = e.target;
+    this.props.onChange(value);
+  };
+
+  render() {
     return (
-        <div className={css.filter}>
-            <h2>Find contacts by name</h2>
-            <input type="text" name="filter" id="filter" />
-        </div>
+       <h3>Find contacts by name</h3> 
+       
     )
+  }
 }
